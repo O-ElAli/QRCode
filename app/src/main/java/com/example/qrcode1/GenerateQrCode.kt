@@ -16,7 +16,7 @@ import com.google.zxing.qrcode.QRCodeWriter
 class GenerateQrCode : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_generate_qr_code2)
 
         // Initialize the views
         var QRCode = findViewById<ImageView>(R.id.QRCode)
