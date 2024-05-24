@@ -15,28 +15,33 @@ import com.google.zxing.WriterException
 import com.google.zxing.common.BitMatrix
 import com.google.zxing.qrcode.QRCodeWriter
 
-class MainActivity : AppCompatActivity() {
+class MainPage : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
+        setContentView(R.layout.activity_main_page2)
 
         //button sends to page called GenerateQrCode
         //call the function when the button is clicked
-        var btn = findViewById<Button>(R.id.QRCode)
-        var userBtn = findViewById<Button>(R.id.userLogin)
+        var qrBtn = findViewById<Button>(R.id.QRCode)
+        var editBtn = findViewById<Button>(R.id.Edit)
 
-        val userIntent = Intent (this, MainPage::class.java)
-
-        userBtn.setOnClickListener {
-            startActivity(userIntent)
-        }
 
         val qrCode = Intent (this, GenerateQrCode::class.java)
 
-        btn.setOnClickListener {
+        val editInfo = Intent (this, editInfo::class.java)
+
+        editBtn.setOnClickListener {
+            startActivity(editInfo)
+        }
+
+        qrBtn.setOnClickListener {
             startActivity(qrCode)
         }
+
+
     }
+
+
+
 }

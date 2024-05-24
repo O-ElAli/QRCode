@@ -23,6 +23,12 @@ class GenerateQrCode : AppCompatActivity() {
         var Data = findViewById<EditText>(R.id.Data)
         var qrGenerator = findViewById<Button>(R.id.QRGenerator)
 
+        // create multiple variables for first name last name and phone number
+        // then create a variable to store all of them together
+        // then create a qr code based on the final variable
+
+
+
         qrGenerator.setOnClickListener {
             val data = Data.text.toString().trim()
             if (data.isEmpty()) {

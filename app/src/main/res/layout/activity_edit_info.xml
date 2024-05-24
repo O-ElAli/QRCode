@@ -5,10 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".editInfo">
 
-
-    <!-- This is the login page -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="100dp"
@@ -18,21 +16,24 @@
         android:textColor="@color/black"
         android:background="@color/design_default_color_primary"
         android:id="@+id/textView"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
 
     <EditText
-        android:id="@+id/username"
+        android:id="@+id/firstName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Username"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
+        android:layout_marginTop="100dp"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/lastName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
@@ -40,48 +41,58 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@+id/username"
+        app:layout_constraintTop_toBottomOf="@+id/firstName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <Button
-        android:id="@+id/userLogin"
+    <!-- phone number -->
+
+    <EditText
+        android:id="@+id/phoneNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="User Login"
+        android:hint="Phone number"
+        android:inputType="phone"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@+id/password"
+        app:layout_constraintTop_toBottomOf="@+id/lastName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <Button
-        android:id="@+id/adminLogin"
+    <!-- email -->
+
+    <EditText
+        android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Admin Login"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@+id/userLogin"
+        app:layout_constraintTop_toBottomOf="@+id/phoneNumber"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- test button to send to next page -->
+
+
+    <!-- Button edit info -->
 
     <Button
-        android:id="@+id/QRCode"
+        android:id="@+id/editInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="QR Code"
+        android:text="Edit personal information"
         android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@+id/adminLogin"
+        app:layout_constraintTop_toBottomOf="@+id/email"
         android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+
 
 
 
