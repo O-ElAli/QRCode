@@ -19,7 +19,7 @@ class MainPage : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main_page2)
+        setContentView(R.layout.activity_main_page)
 
         //button sends to page called GenerateQrCode
         //call the function when the button is clicked
