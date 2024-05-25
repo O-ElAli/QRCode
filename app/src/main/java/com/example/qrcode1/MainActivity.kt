@@ -32,11 +32,5 @@ class MainActivity : AppCompatActivity() {
         userBtn.setOnClickListener {
             startActivity(userIntent)
         }
-
-        val qrCode = Intent (this, GenerateQrCode::class.java)
-
-        btn.setOnClickListener {
-            startActivity(qrCode)
-        }
     }
 }
