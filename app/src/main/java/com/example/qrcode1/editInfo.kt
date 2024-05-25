@@ -12,6 +12,9 @@ class editInfo : AppCompatActivity() {
 
     companion object{
         var allData = ""
+        var fname = ""
+        var lname = ""
+        var pnumber = ""
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,9 +28,7 @@ class editInfo : AppCompatActivity() {
         }
 
         val saveBtn = findViewById<Button>(R.id.editInfo) // Corrected button ID if necessary
-        var fname = ""
-        var lname = ""
-        var pnumber = ""
+
 
 
 
