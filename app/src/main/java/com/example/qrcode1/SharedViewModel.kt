@@ -16,7 +16,7 @@ class SharedViewModel : ViewModel() {
         addSource(phoneNumber) { value = formatData() }
     }
 
-    private fun formatData(): String {
+    fun formatData(): String {
         return "${firstName.value ?: ""} +-+ ${lastName.value ?: ""} +-+ ${phoneNumber.value ?: ""}".trim()
     }
 }
