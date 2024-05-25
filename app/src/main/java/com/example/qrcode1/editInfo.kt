@@ -10,6 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 
 class editInfo : AppCompatActivity() {
 
+    //create static variables to store the data and access it from other activities
     companion object{
         var allData = ""
         var fname = ""
@@ -28,8 +29,6 @@ class editInfo : AppCompatActivity() {
         }
 
         val saveBtn = findViewById<Button>(R.id.editInfo) // Corrected button ID if necessary
-
-
 
 
         saveBtn.setOnClickListener {
