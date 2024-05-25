@@ -44,6 +44,13 @@ dependencies {
     implementation("com.google.zxing:core:3.4.1")  // Core library for QR code generation
     implementation("com.journeyapps:zxing-android-embedded:4.3.0")  // Android-integrated ZXing library
 
+    // Viewmodel and LiveData
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1")
+    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.3.1")
+    implementation ("androidx.fragment:fragment-ktx:1.3.2")
+    // Annotation processor
+    annotationProcessor ("androidx.lifecycle:lifecycle-compiler:2.3.1")
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

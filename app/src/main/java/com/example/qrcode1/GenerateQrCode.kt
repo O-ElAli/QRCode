@@ -7,11 +7,18 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.WriterException
 import com.google.zxing.common.BitMatrix
 import com.google.zxing.qrcode.QRCodeWriter
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.observe  // Import LiveData.observe
+import androidx.lifecycle.Observer
+
 
 class GenerateQrCode : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,19 +27,21 @@ class GenerateQrCode : AppCompatActivity() {
 
         // Initialize the views
         var QRCode = findViewById<ImageView>(R.id.QRCode)
-        var Data = findViewById<EditText>(R.id.Data)
-        var qrGenerator = findViewById<Button>(R.id.QRGenerator)
 
         // create multiple variables for first name last name and phone number
         // then create a variable to store all of them together
         // then create a qr code based on the final variable
 
+        // Create a new instance of the mediator class
+        val sharedViewModel: SharedViewModel by viewModels()
+        // Get data from mediator class
+        val data = sharedViewModel.getAllData()
 
 
-        qrGenerator.setOnClickListener {
-            val data = Data.text.toString().trim()
+        sharedViewModel.getAllData().observe(this) {data ->
             if (data.isEmpty()) {
-                Toast.makeText(this, "Please enter data", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Please enter data in the EditInfo activity", Toast.LENGTH_SHORT)
+                    .show()
             } else {
                 val qrCodeWriter = QRCodeWriter()
                 try {
@@ -51,5 +60,6 @@ class GenerateQrCode : AppCompatActivity() {
                 }
             }
         }
+
     }
 }
