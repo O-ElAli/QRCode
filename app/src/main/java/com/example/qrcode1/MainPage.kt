@@ -25,11 +25,17 @@ class MainPage : AppCompatActivity() {
         //call the function when the button is clicked
         var qrBtn = findViewById<Button>(R.id.QRCode)
         var editBtn = findViewById<Button>(R.id.Edit)
+        var contactsBtn = findViewById<Button>(R.id.Contacts)
+        var agendaBtn = findViewById<Button>(R.id.Agenda)
 
 
         val qrCode = Intent (this, GenerateQrCode::class.java)
 
         val editInfo = Intent (this, editInfo::class.java)
+
+        val contacts = Intent(this, Contacts::class.java)
+
+        val agenda = Intent(this, Agenda::class.java)
 
         editBtn.setOnClickListener {
             startActivity(editInfo)
@@ -37,6 +43,14 @@ class MainPage : AppCompatActivity() {
 
         qrBtn.setOnClickListener {
             startActivity(qrCode)
+        }
+
+        contactsBtn.setOnClickListener {
+            startActivity(contacts)
+        }
+
+        agendaBtn.setOnClickListener {
+            startActivity(agenda)
         }
 
 

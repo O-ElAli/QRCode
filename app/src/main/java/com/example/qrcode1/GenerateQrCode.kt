@@ -7,16 +7,13 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
-import androidx.activity.viewModels
+
 import androidx.appcompat.app.AppCompatActivity
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.WriterException
 import com.google.zxing.common.BitMatrix
 import com.google.zxing.qrcode.QRCodeWriter
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.observe  // Import LiveData.observe
+
 
 
 class GenerateQrCode : AppCompatActivity() {
@@ -34,8 +31,6 @@ class GenerateQrCode : AppCompatActivity() {
 
         // Get data from mediator class
         val data = editInfo.allData
-
-        Toast.makeText(this, data, Toast.LENGTH_SHORT).show()
 
 
         if (data.isEmpty()) {
