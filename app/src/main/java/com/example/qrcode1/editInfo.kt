@@ -12,6 +12,10 @@ import androidx.core.view.WindowInsetsCompat
 class editInfo : AppCompatActivity() {
     private val sharedViewModel: SharedViewModel by viewModels()
 
+    companion object{
+        var allData = ""
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_info)
@@ -23,26 +27,21 @@ class editInfo : AppCompatActivity() {
         }
 
         val saveBtn = findViewById<Button>(R.id.editInfo) // Corrected button ID if necessary
-        val firstName = findViewById<EditText>(R.id.firstName)
-        val lastName = findViewById<EditText>(R.id.lastName)
-        val phoneNumber = findViewById<EditText>(R.id.phoneNumber)
+        var fname = ""
+        var lname = ""
+        var pnumber = ""
 
-        // Observing the combinedData for changes
-        sharedViewModel.combinedData.observe(this) { combinedData ->
-            // Optionally, show the combined data in a Toast or log
-            Toast.makeText(this, "Updated Info: $combinedData", Toast.LENGTH_SHORT).show()
-        }
 
-        // Instead of observing in onCreate, only show a toast when saving data
+
         saveBtn.setOnClickListener {
-            if (firstName.text.isNotEmpty() && lastName.text.isNotEmpty() && phoneNumber.text.isNotEmpty()) {
-                sharedViewModel.firstName.value = firstName.text.toString()
-                sharedViewModel.lastName.value = lastName.text.toString()
-                sharedViewModel.phoneNumber.value = phoneNumber.text.toString()
-                Toast.makeText(this, "Data saved: ${sharedViewModel.formatData()}", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show()
-            }
+
+            fname = findViewById<EditText>(R.id.firstName).text.toString()
+            lname = findViewById<EditText>(R.id.lastName).text.toString()
+            pnumber = findViewById<EditText>(R.id.phoneNumber).text.toString()
+            allData = "$fname%$lname%$pnumber".trim()
+
+            Toast.makeText(this, "Data saved: $allData}", Toast.LENGTH_SHORT).show()
+
         }
 
     }
