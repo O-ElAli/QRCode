@@ -8,7 +8,4 @@
     android:layout_height="match_parent"
     tools:context=".readQrCode">
 
-
-
-
   </androidx.constraintlayout.widget.ConstraintLayout>

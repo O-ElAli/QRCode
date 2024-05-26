@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         //button sends to page called GenerateQrCode
         //call the function when the button is clicked
+        var btn = findViewById<Button>(R.id.QRCode)
         var userBtn = findViewById<Button>(R.id.userLogin)
 
         val userIntent = Intent (this, MainPage::class.java)

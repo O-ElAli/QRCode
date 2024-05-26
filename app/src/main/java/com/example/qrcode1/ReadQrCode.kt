@@ -1,34 +1,24 @@
 package com.example.qrcode1
 
-import android.graphics.Bitmap
-import android.graphics.Color
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.Toast
-
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import com.google.zxing.BarcodeFormat
-import com.google.zxing.WriterException
-import com.google.zxing.common.BitMatrix
-import com.google.zxing.integration.android.IntentIntegrator
-import com.google.zxing.qrcode.QRCodeWriter
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 
+class readQrCode : AppCompatActivity() {
 
-class ReadQrCode : AppCompatActivity(){
+    //responsible for reading qr code in the app
 
-    lateinit var codeScanner = IntentIntegrator(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContentView(R.layout.activity_read_qr_code)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
     }
-
-    // Function to read the QR code using camera
-
-
-
-
 }

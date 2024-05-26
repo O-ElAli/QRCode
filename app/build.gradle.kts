@@ -51,9 +51,6 @@ dependencies {
     // Annotation processor
     annotationProcessor ("androidx.lifecycle:lifecycle-compiler:2.3.1")
 
-    implementation ("com.budiyev.android:code-scanner:2.1.0")  // QR code scanner library
-
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
