@@ -18,7 +18,9 @@
         android:textColor="@color/black"
         android:background="@color/design_default_color_primary"
         android:id="@+id/textView"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <EditText
         android:id="@+id/username"
