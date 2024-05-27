@@ -44,10 +44,6 @@
             android:name=".Registration"
             android:exported="false" />
         <activity
-            android:name=".generateQrCode"
-            android:exported="false"
-            android:theme="@style/Theme.QRCode1" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

@@ -6,6 +6,7 @@ import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.util.Log
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
@@ -19,47 +20,53 @@ import com.google.zxing.qrcode.QRCodeWriter
 
 public class MainActivity : AppCompatActivity() {
 
-    private lateinit var auth:FirebaseAuth
-    private lateinit var imageView: ImageView
-
+    private lateinit var auth: FirebaseAuth
+    private lateinit var email: EditText
+    private lateinit var password: EditText
+    private lateinit var loginUser: Button
+    private lateinit var loginAdmin: Button
+    private lateinit var signUp: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Initialize Firebase Auth
+        auth = FirebaseAuth.getInstance()
 
-        //button sends to page called GenerateQrCode
-        //call the function when the button is clicked
-        //var btn = findViewById<Button>(R.id.QRCode)
-        var userBtn = findViewById<Button>(R.id.userLogin)
-        var singupBtn = findViewById<Button>(R.id.signUp)
-        var username_input = findViewById<EditText>(R.id.username)
-        var password_input = findViewById<EditText>(R.id.password)
-        val userIntent = Intent (this, MainPage::class.java)
+        // Initialize UI elements
+        email = findViewById(R.id.email)
+        password = findViewById(R.id.password)
+        loginUser = findViewById(R.id.userLogin)
+        loginAdmin = findViewById(R.id.adminLogin)
+        signUp = findViewById(R.id.signUp)
+
+        // Intents for navigation
+        val userIntent = Intent(this, MainPage::class.java)
         val registerIntent = Intent(this, Registration::class.java)
 
+        loginUser.setOnClickListener {
+            val emailStr = email.text.toString()
+            val passwordStr = password.text.toString()
 
-        userBtn.setOnClickListener {
-            startActivity(userIntent)
-            auth = FirebaseAuth.getInstance()
-            var username = username_input.text.toString()
-            var password = password_input.text.toString()
-
-            if (username.isNotEmpty() && password.isNotEmpty()){
-                auth.createUserWithEmailAndPassword(username, password).addOnCompleteListener(
+            if (emailStr.isNotEmpty() && passwordStr.isNotEmpty()) {
+                auth.signInWithEmailAndPassword(emailStr, passwordStr).addOnCompleteListener(
                     OnCompleteListener {
-                        if (it.isSuccessful){
-                            Toast.makeText(this, "User Created", Toast.LENGTH_SHORT).show()
-                        }else{
-                            Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
+                        if (it.isSuccessful) {
+                            startActivity(userIntent)
+                            Toast.makeText(this, "User Logged In", Toast.LENGTH_SHORT).show()
+                        } else {
+                            Toast.makeText(this, "Login Failed: ${it.exception?.message}", Toast.LENGTH_SHORT).show()
+                            Log.e("LoginError", it.exception?.message.toString())
                         }
                     }
                 )
+            } else {
+                Toast.makeText(this, "Please enter email and password", Toast.LENGTH_SHORT).show()
             }
-
         }
 
-        singupBtn.setOnClickListener {
+        signUp.setOnClickListener {
             startActivity(registerIntent)
         }
     }
