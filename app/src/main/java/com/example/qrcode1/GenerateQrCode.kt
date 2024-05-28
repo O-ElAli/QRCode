@@ -55,7 +55,7 @@ class GenerateQrCode : AppCompatActivity() {
 
                     if (firstName != null && lastName != null && phoneNumber != null) {
                         // Combine the data into a single string
-                        val data = "$firstName%20$lastName%20$phoneNumber"
+                        val data = "$firstName%$lastName%$phoneNumber"
                         // Generate the QR code with the retrieved data
                         generateQRCode(data)
                     } else {
