@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -27,8 +28,13 @@ class Contacts (firstName : String = "", lastName : String = "", phoneNumber : S
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        var addBtn = findViewById<Button>(R.id.Contacts)
 
-
+        addBtn.setOnClickListener {
+            Toast.makeText(this, "Button Clicked", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, AddContact::class.java)
+            startActivity(intent)
+        }
 
         contacts = findViewById(R.id.contactsList)
         contactList = ArrayList()
@@ -39,18 +45,13 @@ class Contacts (firstName : String = "", lastName : String = "", phoneNumber : S
         contactList.add("Contact 2")
         contactList.add("Contact 3")
 
-//        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, contactList)
-//        contacts.adapter = adapter
+        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, contactList)
+        contacts.adapter = adapter
 
 
 
 
-        var addBtn = findViewById<Button>(R.id.Contacts)
 
-        addBtn.setOnClickListener {
-            val intent = Intent(this, AddContact::class.java)
-            startActivity(intent)
-        }
 
 
 

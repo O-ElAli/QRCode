@@ -38,29 +38,29 @@ class AddContact : AppCompatActivity() {
         if (result.contents != null) {
             // Handle the scanned data here
             Toast.makeText(this, "Scanned content: ${result.contents}", Toast.LENGTH_SHORT).show()
+            var resultString = result.contents
+
+            // Split the result string into individual fields
+            val fields = resultString.split("%")
+
+            val firstName = fields[0]
+            val lastName = fields[1]
+            val phoneNumber = fields[2]
+
+            //Toast.makeText(this, "First Name: ${firstName}, Last Name: ${lastName}, Phone Number: ${phoneNumber}", Toast.LENGTH_SHORT).show()
+
+            var intent = Intent(this, ConfirmContacts::class.java)
+
+            intent.putExtra("firstName", firstName)
+            intent.putExtra("lastName", lastName)
+            intent.putExtra("phoneNumber", phoneNumber)
+
+            startActivity(intent)
 
         } else {
             super.onActivityResult(requestCode, resultCode, data)
         }
 
-        var resultString = result.contents
-
-        // Split the result string into individual fields
-        val fields = resultString.split("%")
-
-        val firstName = fields[0]
-        val lastName = fields[1]
-        val phoneNumber = fields[2]
-
-        Toast.makeText(this, "First Name: ${firstName}, Last Name: ${lastName}, Phone Number: ${phoneNumber}", Toast.LENGTH_SHORT).show()
-
-        var intent = Intent(this, ConfirmContacts::class.java)
-
-        intent.putExtra("firstName", firstName)
-        intent.putExtra("lastName", lastName)
-        intent.putExtra("phoneNumber", phoneNumber)
-
-        startActivity(intent)
 
 
     }

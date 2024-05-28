@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -20,11 +21,13 @@ class ConfirmContacts : AppCompatActivity() {
             insets
         }
 
-        var intent = Intent(this, AddContact::class.java)
+        var intent = intent
 
         val firstName = intent.getStringExtra("firstName")
         val lastName = intent.getStringExtra("lastName")
         val phoneNumber = intent.getStringExtra("phoneNumber")
+
+        Toast.makeText(this, "First Name: ${firstName}, Last Name: ${lastName}, Phone Number: ${phoneNumber}", Toast.LENGTH_SHORT).show()
 
         // Display the contact information
         val contactInfo = findViewById<TextView>(R.id.contactInfo)
