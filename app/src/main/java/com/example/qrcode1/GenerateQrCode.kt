@@ -30,7 +30,7 @@ class GenerateQrCode : AppCompatActivity() {
         // then create a qr code based on the final variable
 
         // Get data from mediator class
-        val data = editInfo.allData
+        val data = "bread"
 
 
         if (data.isEmpty()) {

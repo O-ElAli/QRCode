@@ -42,9 +42,6 @@
             android:name=".GenerateQrCode"
             android:exported="false" />
         <activity
-            android:name=".readQrCode"
-            android:exported="false" />
-        <activity
             android:name=".Registration"
             android:exported="false" />
         <activity
