@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class Contacts : AppCompatActivity() {
+class Contacts (firstName : String = "", lastName : String = "", phoneNumber : String = "") : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +26,7 @@ class Contacts : AppCompatActivity() {
             val intent = Intent(this, AddContact::class.java)
             startActivity(intent)
         }
+
 
 
 

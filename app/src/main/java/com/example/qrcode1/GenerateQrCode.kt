@@ -23,7 +23,7 @@ class GenerateQrCode : AppCompatActivity() {
 
         // Initialize the views
         var QRCode = findViewById<ImageView>(R.id.QRCode)
-//        var qrGenerator = findViewById<Button>(R.id.QRGenerator)
+        //var qrGenerator = findViewById<Button>(R.id.QRGenerator)
 
         // create multiple variables for first name last name and phone number
         // then create a variable to store all of them together
