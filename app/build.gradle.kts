@@ -50,6 +50,7 @@ dependencies {
     implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.3.1")
     implementation ("androidx.fragment:fragment-ktx:1.3.2")
     //Firebase
+
     implementation(libs.firebase.auth)
     implementation(libs.firebase.database)
     // Annotation processor
