@@ -13,6 +13,8 @@ import com.google.zxing.integration.android.IntentIntegrator
 import com.google.zxing.integration.android.IntentResult
 
 class AddContact : AppCompatActivity() {
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -51,6 +53,14 @@ class AddContact : AppCompatActivity() {
         val phoneNumber = fields[2]
 
         Toast.makeText(this, "First Name: ${firstName}, Last Name: ${lastName}, Phone Number: ${phoneNumber}", Toast.LENGTH_SHORT).show()
+
+        var intent = Intent(this, ConfirmContacts::class.java)
+
+        intent.putExtra("firstName", firstName)
+        intent.putExtra("lastName", lastName)
+        intent.putExtra("phoneNumber", phoneNumber)
+
+        startActivity(intent)
 
 
     }
