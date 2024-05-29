@@ -50,7 +50,7 @@ public class MainActivity : AppCompatActivity() {
         // Intents for navigation
         val userIntent = Intent(this, MainPage::class.java)
         val registerIntent = Intent(this, Registration::class.java)
-        val adminIntent = Intent(this, MainPageAdmin::class.java)
+        //val adminIntent = Intent(this, MainPageAdmin::class.java)
 
 
         loginUser.setOnClickListener {
@@ -102,7 +102,7 @@ public class MainActivity : AppCompatActivity() {
                                     override fun onDataChange(snapshot: DataSnapshot) {
                                         val role = snapshot.value as String
                                         if (role == "admin") {
-                                            startActivity(adminIntent)
+                                            //startActivity(adminIntent)
                                             Toast.makeText(this@MainActivity, "Admin Logged In", Toast.LENGTH_SHORT).show()
                                         } else {
                                             Toast.makeText(this@MainActivity, "Invalid credentials for Admin", Toast.LENGTH_SHORT).show()

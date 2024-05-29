@@ -30,10 +30,7 @@
             android:name=".Agenda"
             android:exported="false" />
         <activity
-            android:name=".Contacts"
-            android:exported="false" />
-        <activity
-            android:name=".MainPageAdmin"
+            android:name=".ContactsActivity"
             android:exported="false" />
         <activity
             android:name=".editInfo"
