@@ -13,7 +13,7 @@ class MainPageAdmin : AppCompatActivity() {
         setContentView(R.layout.activity_admin)
 
 
-        var userID = findViewById<EditText>(R.id.userID)
+        var phoneID = findViewById<EditText>(R.id.userID)
         var searchBtn = findViewById<Button>(R.id.searchUser)
 
         var firstName = findViewById<EditText>(R.id.firstName)
@@ -23,23 +23,22 @@ class MainPageAdmin : AppCompatActivity() {
         var addBtn = findViewById<Button>(R.id.addContact)
 
         searchBtn.setOnClickListener(View.OnClickListener {
-            val userIDStr = userID.text.toString()
+            val userIDStr = phoneID.text.toString()
 
             if (userIDStr.isNotEmpty()) {
                 // Search for the user in the database
             }
         })
 
+        // Add the information to the user contacts
         addBtn.setOnClickListener(View.OnClickListener {
             val firstNameStr = firstName.text.toString()
             val lastNameStr = lastName.text.toString()
             val phoneNumberStr = phoneNumber.text.toString()
 
             if (firstNameStr.isNotEmpty() && lastNameStr.isNotEmpty() && phoneNumberStr.isNotEmpty()) {
-                // Add the contact to the database
+                // Add the contact to the user's contact list
             }
         })
-
-
     }
 }
