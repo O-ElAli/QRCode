@@ -1,8 +1,10 @@
 package com.example.qrcode1
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -52,6 +54,13 @@ class ContactsActivity : AppCompatActivity() {
             })
         } else {
             Log.e("ContactsActivity", "Current user is null")
+        }
+
+        var addBtn = findViewById<Button>(R.id.Contacts)
+
+        addBtn.setOnClickListener {
+            val intent = Intent(this, AddContact::class.java)
+            startActivity(intent)
         }
     }
 }
