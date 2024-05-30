@@ -2,6 +2,7 @@ package com.example.qrcode1
 
 import android.content.Intent
 import android.os.Bundle
+import android.provider.ContactsContract
 import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Button
@@ -56,8 +57,17 @@ class ContactsActivity : AppCompatActivity() {
             Log.e("ContactsActivity", "Current user is null")
         }
 
-        var addBtn = findViewById<Button>(R.id.Contacts)
+        listView.setOnItemClickListener { _, _, position, _ ->
+            val selectedContact = contactList[position]
+            val intent = Intent(Intent.ACTION_INSERT).apply {
+                type = ContactsContract.RawContacts.CONTENT_TYPE
+                putExtra(ContactsContract.Intents.Insert.NAME, "${selectedContact.firstName} ${selectedContact.lastName}")
+                putExtra(ContactsContract.Intents.Insert.PHONE, selectedContact.phoneNumber)
+            }
+            startActivity(intent)
+        }
 
+        val addBtn = findViewById<Button>(R.id.Contacts)
         addBtn.setOnClickListener {
             val intent = Intent(this, AddContact::class.java)
             startActivity(intent)
