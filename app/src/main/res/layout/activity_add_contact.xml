@@ -8,10 +8,11 @@
     tools:context=".AddContact">
 
     <Button
+        android:id="@+id/scanQR"
         android:layout_width="wrap_content"
         android:layout_height="70dp"
         android:text="Scan QR"
-        android:id="@+id/scanQR"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
