@@ -32,6 +32,8 @@
         <activity
             android:name=".ContactsActivity"
             android:exported="false" />
+        <activity android:name=".MainPageAdmin"
+            android:exported="false" />
         <activity
             android:name=".editInfo"
             android:exported="false" />
