@@ -25,7 +25,7 @@ class MainPage : AppCompatActivity() {
 
         val contacts = Intent(this, ContactsActivity::class.java)
 
-        val agenda = Intent(this, Agenda::class.java)
+        val agendaActivity = Intent(this, Agenda_Activity::class.java)
 
         editBtn.setOnClickListener {
             startActivity(editInfo)
@@ -40,7 +40,7 @@ class MainPage : AppCompatActivity() {
         }
 
         agendaBtn.setOnClickListener {
-            startActivity(agenda)
+            startActivity(agendaActivity)
         }
 
 

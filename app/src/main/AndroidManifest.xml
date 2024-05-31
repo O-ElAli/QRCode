@@ -27,7 +27,7 @@
             android:name=".AddContact"
             android:exported="false" />
         <activity
-            android:name=".Agenda"
+            android:name=".Agenda_Activity"
             android:exported="false" />
         <activity
             android:name=".ContactsActivity"
@@ -45,6 +45,9 @@
             android:exported="false" />
         <activity
             android:name=".Registration"
+            android:exported="false" />
+        <activity
+            android:name=".AddAgenda"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
