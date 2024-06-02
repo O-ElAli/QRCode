@@ -10,17 +10,17 @@
 
     <!-- Admin page -->
     <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:text="Networking application"
-        android:textSize="30sp"
+        android:background="#8BC34A"
         android:gravity="center"
+        android:text="Networking application"
         android:textColor="@color/white"
-        android:background="@color/design_default_color_primary"
-        android:id="@+id/textView"
-        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Find user by userID -->
     <EditText
@@ -41,13 +41,14 @@
         android:id="@+id/searchUser"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="Search"
         android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
         android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@+id/userID"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="#D86D91"
+        android:text="Search"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/userID" />
 
     <!-- Display user information -->
     <TextView
@@ -111,13 +112,14 @@
         android:id="@+id/addContact"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="Add Contact"
         android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
         android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@+id/phoneNumber"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="#D86D91"
+        android:text="Add Contact"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/phoneNumber" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
